@@ -24,7 +24,7 @@ class SplashViewBody extends StatelessWidget {
                 Container(
                   height: 45,
                   width: 3,
-                  color: Colors.red,
+                  color: kOrangeColor,
                 ),
                 const SizedBox(width: 10),
                 Column(
