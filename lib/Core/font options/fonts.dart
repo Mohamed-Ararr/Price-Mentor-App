@@ -15,4 +15,8 @@ class Fonts {
     fontSize: 17,
     color: Colors.white,
   );
+
+  static TextStyle regularTitle = const TextStyle(
+    fontSize: 20,
+  );
 }
