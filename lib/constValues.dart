@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 
 Color kBlueColor = const Color(0xff0F4C81);
-Color kOrangeColor = const Color(0xffFFA500);
+Color kOrangeColor = const Color(0xffFEB52F);
 Color kGreyColor = const Color(0xffD6D6D6);
 BorderRadius kBorderRadius = BorderRadius.circular(15);
 const String laptopImage = "assets/images/laptop-logo.png";
