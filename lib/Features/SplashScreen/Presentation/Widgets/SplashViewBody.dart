@@ -1,14 +1,26 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pricementor/Core/font%20options/fonts.dart';
 import 'package:pricementor/Features/SplashScreen/Presentation/Widgets/appMotiveHeadline.dart';
 import 'package:pricementor/Features/SplashScreen/Presentation/Widgets/title-slangWidget.dart';
 import 'package:pricementor/constValues.dart';
 
-class SplashViewBody extends StatelessWidget {
+class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
+
+  @override
+  State<SplashViewBody> createState() => _SplashViewBodyState();
+}
+
+class _SplashViewBodyState extends State<SplashViewBody> {
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(
+      const Duration(seconds: 3),
+      // () => GoRout
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
