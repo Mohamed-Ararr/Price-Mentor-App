@@ -45,23 +45,148 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                           brand = value;
                         },
                         fieldTitle: "Brand",
-                        hintText: "Choose A Brand",
+                        hintText: "Choose Brand",
+                        items: ["items"],
+                      ),
+                      const SizedBox(height: 20),
+                      Dropdown(
+                        onSaved: (value) {
+                          brand = value;
+                        },
+                        fieldTitle: "CPU",
+                        hintText: "Choose CPU",
+                        items: ["items"],
+                      ),
+                      const SizedBox(height: 20),
+                      Dropdown(
+                        onSaved: (value) {
+                          brand = value;
+                        },
+                        fieldTitle: "RAM",
+                        hintText: "Choose RAM",
+                        items: ["items"],
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Dropdown(
+                              onSaved: (value) {
+                                brand = value;
+                              },
+                              fieldTitle: "SSD",
+                              hintText: "Choose SSD",
+                              items: ["items"],
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          Expanded(
+                            child: Dropdown(
+                              onSaved: (value) {
+                                brand = value;
+                              },
+                              fieldTitle: "HDD",
+                              hintText: "Choose HDD",
+                              items: ["items"],
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      Dropdown(
+                        onSaved: (value) {
+                          brand = value;
+                        },
+                        fieldTitle: "GPU",
+                        hintText: "Choose GPU",
+                        items: ["items"],
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Dropdown(
+                              onSaved: (value) {
+                                brand = value;
+                              },
+                              fieldTitle: "Screen Size",
+                              hintText: "Choose Size",
+                              items: ["items"],
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          Expanded(
+                            child: Dropdown(
+                              onSaved: (value) {
+                                brand = value;
+                              },
+                              fieldTitle: "Resolution",
+                              hintText: "Choose Resolution",
+                              items: ["items"],
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Dropdown(
+                              onSaved: (value) {
+                                brand = value;
+                              },
+                              fieldTitle: "Display Tech",
+                              hintText: "Choose Display",
+                              items: ["items"],
+                            ),
+                          ),
+                          const SizedBox(width: 20),
+                          Expanded(
+                            child: Dropdown(
+                              onSaved: (value) {
+                                brand = value;
+                              },
+                              fieldTitle: "Refresh Rate",
+                              hintText: "Choose Refresh Rate",
+                              items: ["items"],
+                            ),
+                          ),
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      Dropdown(
+                        onSaved: (value) {
+                          brand = value;
+                        },
+                        fieldTitle: "Operating System",
+                        hintText: "Choose OS",
+                        items: ["items"],
+                      ),
+                      const SizedBox(height: 20),
+                      Dropdown(
+                        onSaved: (value) {
+                          brand = value;
+                        },
+                        fieldTitle: "Condition",
+                        hintText: "Choose Condition",
                         items: ["items"],
                       ),
                     ],
                   ),
                 ),
+                const SizedBox(height: 20),
                 ElevatedButton(
                   onPressed: () {
                     if (key.currentState!.validate()) {
                       key.currentState!.save();
-                      print(brand);
+                      debugPrint(brand);
                     } else {
-                      print("faild");
+                      debugPrint("faild");
                     }
                   },
-                  child: Text("submit"),
+                  child: const Text("submit"),
                 ),
+                const SizedBox(height: 10),
               ],
             ),
           ),
