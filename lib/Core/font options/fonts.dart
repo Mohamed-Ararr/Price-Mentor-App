@@ -6,4 +6,13 @@ class Fonts {
     color: Colors.white,
     letterSpacing: 3,
   );
+
+  static TextStyle smallSlang = const TextStyle(
+    color: Color(0xffCECECE),
+  );
+
+  static TextStyle appSlang = const TextStyle(
+    fontSize: 17,
+    color: Colors.white,
+  );
 }

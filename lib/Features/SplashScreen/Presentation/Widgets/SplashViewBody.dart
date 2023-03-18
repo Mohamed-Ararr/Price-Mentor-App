@@ -22,8 +22,8 @@ class SplashViewBody extends StatelessWidget {
                 Image.asset(laptopImage),
                 const SizedBox(width: 10),
                 Container(
-                  height: 40,
-                  width: 2,
+                  height: 45,
+                  width: 3,
                   color: Colors.red,
                 ),
                 const SizedBox(width: 10),
@@ -34,15 +34,23 @@ class SplashViewBody extends StatelessWidget {
                       "Price Mentor",
                       style: Fonts.appTitle,
                     ),
-                    const Text(
+                    Text(
                       "Smart Predictions, Smart Savings!",
+                      style: Fonts.smallSlang,
                     )
                   ],
                 ),
               ],
             ),
             const Spacer(),
-            const Text("Never overpay again with our laptop price insights!"),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.75,
+              child: Text(
+                "Never overpay again with our laptop price insights!",
+                style: Fonts.appSlang,
+                textAlign: TextAlign.center,
+              ),
+            ),
             const SizedBox(height: 15),
           ],
         ),
