@@ -1,6 +1,8 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:pricementor/Core/Router/routing.dart';
 import 'package:pricementor/Features/SplashScreen/Presentation/Widgets/appMotiveHeadline.dart';
 import 'package:pricementor/Features/SplashScreen/Presentation/Widgets/title-slangWidget.dart';
 import 'package:pricementor/constValues.dart';
@@ -18,7 +20,7 @@ class _SplashViewBodyState extends State<SplashViewBody> {
     super.initState();
     Future.delayed(
       const Duration(seconds: 3),
-      // () => GoRout
+      () => GoRouter.of(context).pushReplacement(AppRouter.homeView),
     );
   }
 
