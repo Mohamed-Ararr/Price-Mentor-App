@@ -2,4 +2,5 @@
 
 import 'package:flutter/material.dart';
 
-Color blueColor = const Color(0xff0F4C81);
+Color kBlueColor = const Color(0xff0F4C81);
+const String laptopImage = "assets/images/laptop-logo.png";
