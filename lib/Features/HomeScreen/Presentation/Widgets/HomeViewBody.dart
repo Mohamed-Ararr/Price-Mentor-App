@@ -1,7 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:pricementor/Features/HomeScreen/Presentation/Widgets/HomeViewAppBar.dart';
 import 'package:pricementor/constValues.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -16,15 +18,7 @@ class HomeViewBody extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Image.asset(laptopImage),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.abc),
-                    ),
-                  ],
-                ),
+                HomeViewAppBar(),
               ],
             ),
           ),
