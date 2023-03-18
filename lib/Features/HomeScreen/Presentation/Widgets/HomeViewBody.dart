@@ -49,7 +49,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   style: Fonts.regularTitle,
                 ),
               ),
-              const SizedBox(height: 25),
+              const SizedBox(height: 15),
               Form(
                 key: key,
                 child: const LaptopFields(),
@@ -65,7 +65,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   }
                 },
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
             ],
           ),
         ),
