@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pricementor/Core/Api%20Service/api.dart';
 import 'package:pricementor/Core/Router/routing.dart';
 import 'package:pricementor/Core/font%20options/fonts.dart';
 import 'package:pricementor/Features/HomeScreen/Presentation/Widgets/submitButton.dart';
@@ -58,8 +59,37 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               ),
               const SizedBox(height: 20),
               SubmitButton(
-                onPressed: () {
-                  GoRouter.of(context).push(AppRouter.resultView);
+                onPressed: () async {
+                  await ApiService()
+                      .post(
+                        endPoint: "/predict",
+                        data: {
+                          "Brand": "Asus",
+                          "CPU_Brand": "Intel",
+                          "CPU_Name": "I3",
+                          "CPU_Gen": 10,
+                          "CPU_Cores": "Dual-Core",
+                          "RAM_Size": 8,
+                          "RAM_Type": "DDR4",
+                          "SSD": 128,
+                          "HDD": 1000,
+                          "GPU_Brand": "",
+                          "GPU_Name": "",
+                          "GPU_Size": 0,
+                          "Size": 15.6,
+                          "Resolution": "FHD",
+                          "Display_Tech": "LED",
+                          "FPS": 60,
+                          "OS": "Windows 11",
+                          "Condition": "New",
+                        },
+                      )
+                      .then(
+                        (value) => debugPrint("$value"),
+                      )
+                      .onError(
+                        (error, stackTrace) => debugPrint(error.toString()),
+                      );
                   // if (key.currentState!.validate()) {
                   //   key.currentState!.save();
                   //   debugPrint("Success");
