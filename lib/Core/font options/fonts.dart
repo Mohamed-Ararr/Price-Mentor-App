@@ -19,4 +19,9 @@ class Fonts {
   static TextStyle regularTitle = const TextStyle(
     fontSize: 20,
   );
+
+  static TextStyle priceFont = const TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
 }

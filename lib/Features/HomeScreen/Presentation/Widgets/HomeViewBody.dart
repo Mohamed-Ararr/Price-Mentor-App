@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
+import 'package:pricementor/Core/Router/routing.dart';
 import 'package:pricementor/Core/font%20options/fonts.dart';
 import 'package:pricementor/Features/HomeScreen/Presentation/Widgets/submitButton.dart';
 import 'package:pricementor/constValues.dart';
@@ -57,12 +59,14 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               const SizedBox(height: 20),
               SubmitButton(
                 onPressed: () {
-                  if (key.currentState!.validate()) {
-                    key.currentState!.save();
-                    debugPrint("Success");
-                  } else {
-                    debugPrint("faild");
-                  }
+                  GoRouter.of(context).push(AppRouter.resultView);
+                  // if (key.currentState!.validate()) {
+                  //   key.currentState!.save();
+                  //   debugPrint("Success");
+                  //   GoRouter.of(context).push(AppRouter.resultView);
+                  // } else {
+                  //   debugPrint("faild");
+                  // }
                 },
               ),
               const SizedBox(height: 20),
