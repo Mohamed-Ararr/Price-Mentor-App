@@ -22,7 +22,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: kBlueColor,
-        title: const Text("Price Mentor"),
+        title: const Text("PRICE MENTOR"),
         centerTitle: true,
         leading: Image.asset(
           laptopImage,
