@@ -5,9 +5,10 @@ import 'package:pricementor/Core/font%20options/fonts.dart';
 import 'package:pricementor/constValues.dart';
 
 class SubmitButton extends StatelessWidget {
-  const SubmitButton({super.key, this.onPressed});
+  const SubmitButton({super.key, this.onPressed, this.child});
 
   final Function()? onPressed;
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -20,10 +21,7 @@ class SubmitButton extends StatelessWidget {
           borderRadius: kBorderRadius,
         ),
       ),
-      child: Text(
-        "Submit",
-        style: Fonts.regularTitle.copyWith(color: Colors.black),
-      ),
+      child: child,
     );
   }
 }
