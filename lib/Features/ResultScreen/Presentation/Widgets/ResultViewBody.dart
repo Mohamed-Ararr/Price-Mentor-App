@@ -8,7 +8,9 @@ import "package:pricementor/Features/ResultScreen/Presentation/Widgets/resultWid
 import "package:pricementor/constValues.dart";
 
 class ResultViewBody extends StatelessWidget {
-  const ResultViewBody({super.key});
+  const ResultViewBody({super.key, required this.price});
+
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class ResultViewBody extends StatelessWidget {
                 const SizedBox(height: 10),
                 Text("Result", style: Fonts.regularTitle),
                 const SizedBox(height: 10),
-                const ResultWidget(),
+                ResultWidget(price: price),
                 const SizedBox(height: 20),
                 Divider(color: kBlueColor, height: 2, thickness: 0.8),
                 const SizedBox(height: 20),

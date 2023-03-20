@@ -5,10 +5,12 @@ import "package:flutter/material.dart";
 import "Widgets/ResultViewBody.dart";
 
 class ResultView extends StatelessWidget {
-  const ResultView({super.key});
+  const ResultView({super.key, required this.price});
+
+  final String price;
 
   @override
   Widget build(BuildContext context) {
-    return const ResultViewBody();
+    return ResultViewBody(price: price);
   }
 }

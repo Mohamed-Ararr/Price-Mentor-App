@@ -89,7 +89,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     onPressed: () async {
                       await BlocProvider.of<PostPriceCubit>(context)
                           .postPrice("/predict", {
-                        "Brand": "HP",
+                        "Brand": "Asus",
                         "CPU_Brand": "Intel",
                         "CPU_Name": "I7",
                         "CPU_Gen": 7,
@@ -99,8 +99,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                         "SSD": 128,
                         "HDD": 1000,
                         "GPU_Brand": "NVIDIA",
-                        "GPU_Name": "GTX1050",
-                        "GPU_Size": 4,
+                        "GPU_Name": "RTX3060",
+                        "GPU_Size": 8,
                         "Size": 15.6,
                         "Resolution": "FHD",
                         "Display_Tech": "LED",

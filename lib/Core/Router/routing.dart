@@ -1,4 +1,6 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:pricementor/Features/HomeScreen/Bloc%20Manager/PostPrice/cubit/post_price_cubit.dart';
 import 'package:pricementor/Features/HomeScreen/Presentation/HomeView.dart';
 import 'package:pricementor/Features/SplashScreen/Presentation/SplashView.dart';
 
@@ -20,7 +22,10 @@ class AppRouter {
       ),
       GoRoute(
         path: resultView,
-        builder: (context, state) => const ResultView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => PostPriceCubit(),
+          child: ResultView(price: state.extra as String),
+        ),
       ),
     ],
   );

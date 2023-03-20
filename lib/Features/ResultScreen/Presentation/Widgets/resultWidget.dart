@@ -6,7 +6,9 @@ import '../../../../Core/font options/fonts.dart';
 import '../../../../constValues.dart';
 
 class ResultWidget extends StatelessWidget {
-  const ResultWidget({super.key});
+  const ResultWidget({super.key, required this.price});
+
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,7 @@ class ResultWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const Text("Predicted Price"),
-          Text("92000 DA", style: Fonts.priceFont),
+          Text("$price DA", style: Fonts.priceFont),
         ],
       ),
     );
