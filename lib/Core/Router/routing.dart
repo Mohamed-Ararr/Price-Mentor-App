@@ -4,6 +4,7 @@ import 'package:pricementor/Features/HomeScreen/Bloc%20Manager/PostPrice/cubit/p
 import 'package:pricementor/Features/HomeScreen/Presentation/HomeView.dart';
 import 'package:pricementor/Features/SplashScreen/Presentation/SplashView.dart';
 
+import '../../Features/HomeScreen/Model/LaptopModel.dart';
 import '../../Features/ResultScreen/Presentation/ResultView.dart';
 
 class AppRouter {
@@ -18,7 +19,7 @@ class AppRouter {
       ),
       GoRoute(
         path: homeView,
-        builder: (context, state) => const HomeView(),
+        builder: (context, state) => HomeView(laptop: Laptop()),
       ),
       GoRoute(
         path: resultView,

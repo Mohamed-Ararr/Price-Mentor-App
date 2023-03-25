@@ -13,10 +13,12 @@ import 'package:pricementor/Features/HomeScreen/Bloc%20Manager/PostPrice/cubit/p
 import 'package:pricementor/Features/HomeScreen/Presentation/Widgets/submitButton.dart';
 import 'package:pricementor/constValues.dart';
 
+import '../../Model/LaptopModel.dart';
 import 'laptopFields.dart';
 
 class HomeViewBody extends StatefulWidget {
-  const HomeViewBody({super.key});
+  const HomeViewBody({super.key, required this.laptop});
+  final Laptop laptop;
 
   @override
   State<HomeViewBody> createState() => _HomeViewBodyState();
@@ -80,59 +82,39 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     absorbing: state is PostPriceLoading ? true : false,
                     child: Form(
                       key: key,
-                      child: const LaptopFields(),
+                      child: LaptopFields(laptop: widget.laptop),
                     ),
                   ),
                   const SizedBox(height: 20),
                   SubmitButton(
                     onPressed: () async {
-                      await BlocProvider.of<PostPriceCubit>(context)
-                          .postPrice("/predict", {
-                        "Brand": "Asus",
-                        "CPU_Brand": "Intel",
-                        "CPU_Name": "I7",
-                        "CPU_Gen": 7,
-                        "CPU_Cores": "Quad-Core",
-                        "RAM_Size": 8,
-                        "RAM_Type": "DDR4",
-                        "SSD": 128,
-                        "HDD": 1000,
-                        "GPU_Brand": "NVIDIA",
-                        "GPU_Name": "RTX3060",
-                        "GPU_Size": 8,
-                        "Size": 15.6,
-                        "Resolution": "FHD",
-                        "Display_Tech": "LED",
-                        "FPS": 120,
-                        "OS": "Windows 10 Pro",
-                        "Condition": "New",
-                      });
-                      // if (key.currentState!.validate()) {
-                      //   key.currentState!.save();
-                      //   await PostPriceCubit().postPrice("/predict", {
-                      //     "Brand": "HP",
-                      //     "CPU_Brand": "Intel",
-                      //     "CPU_Name": "I7",
-                      //     "CPU_Gen": 7,
-                      //     "CPU_Cores": "Quad-Core",
-                      //     "RAM_Size": 8,
-                      //     "RAM_Type": "DDR4",
-                      //     "SSD": 128,
-                      //     "HDD": 1000,
-                      //     "GPU_Brand": "NVIDIA",
-                      //     "GPU_Name": "GTX1050",
-                      //     "GPU_Size": 4,
-                      //     "Size": 15.6,
-                      //     "Resolution": "FHD",
-                      //     "Display_Tech": "LED",
-                      //     "FPS": 120,
-                      //     "OS": "Windows 10 Pro",
-                      //     "Condition": "New",
-                      //   });
-                      //   debugPrint("Success");
-                      // } else {
-                      //   debugPrint("faild");
-                      // }
+                      if (key.currentState!.validate()) {
+                        key.currentState!.save();
+                        await BlocProvider.of<PostPriceCubit>(context)
+                            .postPrice("/predict", {
+                          "Brand": "Asus",
+                          "CPU_Brand": "Intel",
+                          "CPU_Name": "I7",
+                          "CPU_Gen": 7,
+                          "CPU_Cores": "Quad-Core",
+                          "RAM_Size": 8,
+                          "RAM_Type": "DDR4",
+                          "SSD": 128,
+                          "HDD": 1000,
+                          "GPU_Brand": "NVIDIA",
+                          "GPU_Name": "RTX3060",
+                          "GPU_Size": 8,
+                          "Size": 15.6,
+                          "Resolution": "FHD",
+                          "Display_Tech": "LED",
+                          "FPS": 120,
+                          "OS": "Windows 10",
+                          "Condition": "New",
+                        });
+                        debugPrint("Success");
+                      } else {
+                        debugPrint("faild");
+                      }
                     },
                     child: ModalProgressHUD(
                       progressIndicator: SizedBox(
