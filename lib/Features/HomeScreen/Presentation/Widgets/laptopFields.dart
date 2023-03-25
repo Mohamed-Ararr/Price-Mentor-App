@@ -84,13 +84,11 @@ class LaptopFields extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 20),
-        Expanded(
-          child: Dropdown(
-            onSaved: (value) {},
-            fieldTitle: "Refresh Rate",
-            hintText: "Choose Refresh Rate",
-            items: ItemsLists.fps,
-          ),
+        Dropdown(
+          onSaved: (value) {},
+          fieldTitle: "Refresh Rate",
+          hintText: "Choose Refresh Rate",
+          items: ItemsLists.fps,
         ),
         const SizedBox(height: 20),
         Dropdown(

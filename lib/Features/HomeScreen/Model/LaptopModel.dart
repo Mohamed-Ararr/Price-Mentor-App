@@ -2,40 +2,26 @@
 
 class Laptop {
   String brand;
-  String cpuBrand;
-  String cpuName;
-  int cpuGen;
-  String cpuCores;
-  int ramSize;
-  String ramType;
+  String cpu;
+  String ram;
   int ssd;
   int hdd;
-  String gpuBrand;
-  String gpuName;
-  int gpuSize;
+  String gpu;
   double size;
   String resolution;
-  String displayTech;
   int fps;
   String os;
   String condition;
 
   Laptop({
     required this.brand,
-    required this.cpuBrand,
-    required this.cpuName,
-    required this.cpuGen,
-    required this.cpuCores,
-    required this.ramSize,
-    required this.ramType,
+    required this.cpu,
+    required this.ram,
     required this.ssd,
     required this.hdd,
-    required this.gpuBrand,
-    required this.gpuName,
-    required this.gpuSize,
+    required this.gpu,
     required this.size,
     required this.resolution,
-    required this.displayTech,
     required this.fps,
     required this.os,
     required this.condition,
