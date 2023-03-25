@@ -13,7 +13,6 @@ import 'package:pricementor/Features/HomeScreen/Bloc%20Manager/PostPrice/cubit/p
 import 'package:pricementor/Features/HomeScreen/Presentation/Widgets/submitButton.dart';
 import 'package:pricementor/constValues.dart';
 
-import '../../../../Core/Api Service/api.dart';
 import 'laptopFields.dart';
 
 class HomeViewBody extends StatefulWidget {
@@ -108,16 +107,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                         "OS": "Windows 10 Pro",
                         "Condition": "New",
                       });
-                      // .catchError((onError) {
-                      //   AwesomeDialog(
-                      //     context: context,
-                      //     title: "¯\_(ツ)_/¯",
-                      //     desc: onError,
-                      //     descTextStyle: Fonts.regularTitle
-                      //         .copyWith(fontWeight: FontWeight.bold),
-                      //     dialogType: DialogType.error,
-                      //   ).show();
-                      // });
                       // if (key.currentState!.validate()) {
                       //   key.currentState!.save();
                       //   await PostPriceCubit().postPrice("/predict", {
