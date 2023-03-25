@@ -92,24 +92,31 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                         key.currentState!.save();
                         await BlocProvider.of<PostPriceCubit>(context)
                             .postPrice("/predict", {
-                          "Brand": "Asus",
-                          "CPU_Brand": "Intel",
-                          "CPU_Name": "I7",
-                          "CPU_Gen": 7,
-                          "CPU_Cores": "Quad-Core",
-                          "RAM_Size": 8,
-                          "RAM_Type": "DDR4",
-                          "SSD": 128,
-                          "HDD": 1000,
-                          "GPU_Brand": "NVIDIA",
-                          "GPU_Name": "RTX3060",
-                          "GPU_Size": 8,
-                          "Size": 15.6,
-                          "Resolution": "FHD",
-                          "Display_Tech": "LED",
-                          "FPS": 120,
-                          "OS": "Windows 10",
-                          "Condition": "New",
+                          "Brand": widget.laptop.brand,
+                          "CPU_Brand": widget.laptop.cpu!.split(" ")[0],
+                          "CPU_Name": widget.laptop.cpu!.split(" ")[1],
+                          "CPU_Gen":
+                              int.parse(widget.laptop.cpu!.split(" ")[2]),
+                          "CPU_Cores": widget.laptop.cpu!.split(" ")[3],
+                          "RAM_Size": int.parse(widget.laptop.ram!
+                              .split(" ")[0]
+                              .replaceAll("GB", "")),
+                          "RAM_Type": widget.laptop.ram!.split(" ")[1],
+                          "SSD": int.parse(
+                              widget.laptop.ssd!.replaceAll("GB", "")),
+                          "HDD": int.parse(
+                              widget.laptop.hdd!.replaceAll("GB", "")),
+                          "GPU_Brand": widget.laptop.gpu!.split(" ")[0],
+                          "GPU_Name": widget.laptop.gpu!.split(" ")[1],
+                          "GPU_Size": int.parse(widget.laptop.gpu!
+                              .split(" ")[2]
+                              .replaceAll("GB", "")),
+                          "Size": double.parse(widget.laptop.size!),
+                          "Resolution": widget.laptop.resolution,
+                          "FPS": int.parse(
+                              widget.laptop.fps!.replaceAll("Hz", "")),
+                          "OS": widget.laptop.os,
+                          "Condition": widget.laptop.condition,
                         });
                         debugPrint("Success");
                       } else {
