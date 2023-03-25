@@ -7,10 +7,12 @@ import "package:pricementor/Features/ResultScreen/Presentation/Widgets/SpecAndVa
 import "package:pricementor/Features/ResultScreen/Presentation/Widgets/resultWidget.dart";
 import "package:pricementor/constValues.dart";
 
-class ResultViewBody extends StatelessWidget {
-  const ResultViewBody({super.key, required this.price});
+import "../../../HomeScreen/Model/LaptopModel.dart";
 
-  final String price;
+class ResultViewBody extends StatelessWidget {
+  const ResultViewBody({super.key, required this.laptop});
+
+  final Laptop laptop;
 
   @override
   Widget build(BuildContext context) {
@@ -19,38 +21,39 @@ class ResultViewBody extends StatelessWidget {
         child: Padding(
           padding: kPaddingLR,
           child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
                 const ResultViewAppBar(),
                 const SizedBox(height: 10),
                 Text("Result", style: Fonts.regularTitle),
                 const SizedBox(height: 10),
-                ResultWidget(price: price),
+                ResultWidget(price: laptop.price!),
                 const SizedBox(height: 20),
                 Divider(color: kBlueColor, height: 2, thickness: 0.8),
                 const SizedBox(height: 20),
                 Text("Specs Review", style: Fonts.regularTitle),
                 const SizedBox(height: 15),
-                const SpecAndValue(spec: "Brand", specValue: "Asus"),
+                SpecAndValue(spec: "Brand", specValue: laptop.brand!),
                 const SizedBox(height: 10),
-                const SpecAndValue(
-                    spec: "CPU", specValue: "Intel I3 10 Dual-Core"),
+                SpecAndValue(spec: "CPU", specValue: laptop.cpu!),
                 const SizedBox(height: 10),
-                const SpecAndValue(spec: "RAM", specValue: "16GB DDR4"),
+                SpecAndValue(spec: "RAM", specValue: laptop.ram!),
                 const SizedBox(height: 10),
-                const SpecAndValue(spec: "SSD", specValue: "256GB"),
+                SpecAndValue(spec: "SSD", specValue: laptop.ssd!),
                 const SizedBox(height: 10),
-                const SpecAndValue(spec: "HDD", specValue: "1000GB"),
+                SpecAndValue(spec: "HDD", specValue: laptop.hdd!),
                 const SizedBox(height: 10),
-                const SpecAndValue(
-                    spec: "GPU", specValue: "NVIDIA RTX3060TI 6GB"),
+                SpecAndValue(spec: "GPU", specValue: laptop.gpu!),
                 const SizedBox(height: 10),
-                const SpecAndValue(
-                    spec: "Display", specValue: "15.6\" FHD OLED 120Hz"),
+                SpecAndValue(
+                    spec: "Display",
+                    specValue:
+                        "${laptop.size} ${laptop.resolution} ${laptop.fps}"),
                 const SizedBox(height: 10),
-                const SpecAndValue(spec: "OS", specValue: "Windows 10"),
+                SpecAndValue(spec: "OS", specValue: laptop.os!),
                 const SizedBox(height: 10),
-                const SpecAndValue(spec: "Condition", specValue: "Like New"),
+                SpecAndValue(spec: "Condition", specValue: laptop.condition!),
                 const SizedBox(height: 10),
               ],
             ),

@@ -25,7 +25,7 @@ class AppRouter {
         path: resultView,
         builder: (context, state) => BlocProvider(
           create: (context) => PostPriceCubit(),
-          child: ResultView(price: state.extra as String),
+          child: ResultView(laptop: state.extra as Laptop),
         ),
       ),
     ],

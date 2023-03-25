@@ -12,6 +12,7 @@ class Laptop {
   String? fps;
   String? os;
   String? condition;
+  String? price;
 
   Laptop({
     this.brand,
@@ -25,5 +26,6 @@ class Laptop {
     this.fps,
     this.os,
     this.condition,
+    this.price,
   });
 }

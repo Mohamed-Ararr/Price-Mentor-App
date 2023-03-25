@@ -43,7 +43,11 @@ class _HomeViewBodyState extends State<HomeViewBody> {
         }
         if (state is PostPriceSuccess) {
           debugPrint(state.price);
-          GoRouter.of(context).push(AppRouter.resultView, extra: state.price);
+          widget.laptop.price = state.price;
+          GoRouter.of(context).push(
+            AppRouter.resultView,
+            extra: widget.laptop,
+          );
         }
       },
       builder: (context, state) {
@@ -90,6 +94,8 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                     onPressed: () async {
                       if (key.currentState!.validate()) {
                         key.currentState!.save();
+                        var isGpuEmpty =
+                            widget.laptop.gpu == "None" ? true : false;
                         await BlocProvider.of<PostPriceCubit>(context)
                             .postPrice("/predict", {
                           "Brand": widget.laptop.brand,
@@ -106,11 +112,17 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                               widget.laptop.ssd!.replaceAll("GB", "")),
                           "HDD": int.parse(
                               widget.laptop.hdd!.replaceAll("GB", "")),
-                          "GPU_Brand": widget.laptop.gpu!.split(" ")[0],
-                          "GPU_Name": widget.laptop.gpu!.split(" ")[1],
-                          "GPU_Size": int.parse(widget.laptop.gpu!
-                              .split(" ")[2]
-                              .replaceAll("GB", "")),
+                          "GPU_Brand": isGpuEmpty
+                              ? ""
+                              : widget.laptop.gpu!.split(" ")[0],
+                          "GPU_Name": isGpuEmpty
+                              ? ""
+                              : widget.laptop.gpu!.split(" ")[1],
+                          "GPU_Size": isGpuEmpty
+                              ? 0
+                              : int.parse(widget.laptop.gpu!
+                                  .split(" ")[2]
+                                  .replaceAll("GB", "")),
                           "Size": double.parse(widget.laptop.size!),
                           "Resolution": widget.laptop.resolution,
                           "FPS": int.parse(
