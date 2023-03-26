@@ -62,12 +62,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
               laptopImage,
               scale: 0.9,
             ),
-            actions: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(FontAwesomeIcons.circleInfo),
-              ),
-            ],
           ),
           body: Padding(
             padding: kPaddingLR,
@@ -194,24 +188,3 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     }
   }
 }
-
-// .then(
-//                         (value) => {
-//                           GoRouter.of(context)
-//                               .push(AppRouter.resultView, extra: {value}),
-//                           debugPrint("${value.statusCode}"),
-//                         },
-//                       )
-//                       .catchError((onError) {
-//                         String errorMsg = "";
-//                         if (onError is DioError) {
-//                           errorMsg = checkError(onError, errorMsg);
-//                         } else {
-//                           errorMsg = onError.toString();
-//                         }
-//                         showError(context, errorMsg).show();
-//                         return null;
-//                       })
-//                       .onError((error, stackTrace) => {
-//                             AwesomeDialog(context: context, desc: "$error"),
-//                           });

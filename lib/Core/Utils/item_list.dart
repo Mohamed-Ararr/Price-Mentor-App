@@ -50,7 +50,6 @@ class ItemsLists {
     'Intel I7 10 Hexa-Core',
     'Intel I7 10 Octa-Core',
     'Intel I7 11 Octa-Core',
-    'Intel I7 11 Octa-Core',
     'Intel I7 12 Hexa-Core',
     'Intel I7 12 Octa-Core',
     'Intel I9 10 Deca-Core',
