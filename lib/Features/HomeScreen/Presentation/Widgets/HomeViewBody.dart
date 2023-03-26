@@ -25,6 +25,8 @@ class HomeViewBody extends StatefulWidget {
 }
 
 class _HomeViewBodyState extends State<HomeViewBody> {
+  AutovalidateMode validateMode = AutovalidateMode.disabled;
+
   GlobalKey<FormState> key = GlobalKey();
   @override
   Widget build(BuildContext context) {
@@ -85,6 +87,7 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                   AbsorbPointer(
                     absorbing: state is PostPriceLoading ? true : false,
                     child: Form(
+                      autovalidateMode: validateMode,
                       key: key,
                       child: LaptopFields(laptop: widget.laptop),
                     ),
@@ -130,8 +133,14 @@ class _HomeViewBodyState extends State<HomeViewBody> {
                           "OS": widget.laptop.os,
                           "Condition": widget.laptop.condition,
                         });
+                        setState(() {
+                          validateMode = AutovalidateMode.disabled;
+                        });
                         debugPrint("Success");
                       } else {
+                        setState(() {
+                          validateMode = AutovalidateMode.always;
+                        });
                         debugPrint("faild");
                       }
                     },
